@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks: 
+  - name: install ntpdate
+    yum:
+      name: ntpdate
+      state: latest
+  - name: Ensure ntpdate is running
+    service: 
+      name: ntpdate 
+      state: started 
+      enabled: yes

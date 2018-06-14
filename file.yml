@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+  - name: Touch File
+    file: 
+     path: /tmp/hello_world2.txt 
+     state: touch
+  - name: copy File
+    copy: 
+     src: /tmp/hello_world2.txt
+     dest: /var/tmp/hello_world2.txt
+     owner: root
+     group: root
+     mode: 0644
+  - name: remove File
+    file: 
+     path: /tmp/hello_world2.txt
+     state: absent
